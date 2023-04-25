@@ -32,7 +32,7 @@ do
 echo "Identificando el TXID $a"
 sleep 2
 echo "En Proceso..."
-curl -s $APIendpoint/$a >> response.json
+curl -s https://api.blockcypher.com/v1/btc/main/txs/$a >> response.json
 sleep 2
 echo "Json Generado del TXID $a"
 echo "Transformando Data, por favor espere..."
