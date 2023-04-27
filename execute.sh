@@ -32,18 +32,17 @@ do
 echo "Identificando el TXID $a"
 sleep 2
 echo "En Proceso..."
-curl -s https://api.blockcypher.com/v1/btc/main/txs/$a >> response.json
-sleep 2
+curl -s https://api.blockchair.com/bitcoin/dashboards/transaction/$a?key=A___SPL4YocWbd4CZUhsTfKHhIY0EWxh >> response.json
+sleep 1
 echo "Json Generado del TXID $a"
 echo "Transformando Data, por favor espere..."
-sleep 2
-echo 
-cat response.json | jq -r '.inputs[].addresses' | cut -c 3- | head -2 | tail -1 >> addresses_origin.txt 
+sleep 1
+cat response.json | jq -r '.data[].inputs[].recipient' >> addresses_origin.txt 
 echo "Limpiando data..."
-sleep 3
+sleep 1
 > response.json
 n=$((n+1))
 done < $filename
 echo "Secuencia Completada"
-sleep 3
+sleep 1
 echo "Fin del Script =)"
