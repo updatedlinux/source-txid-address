@@ -12,6 +12,7 @@
 #	
 #	By Jonathan Melendez | Release 1.0
 #	25/04/2023: Original  Code Retail to Production Service.
+# 27/04/2023: Change Blockchain API to Blockchair for more Quota (10k Api Request)
 #
 # Notes:
 #	Only Execute with root user.
