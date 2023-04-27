@@ -38,7 +38,7 @@ sleep 1
 echo "Json Generado del TXID $a"
 echo "Transformando Data, por favor espere..."
 sleep 1
-cat response.json | jq -r '.data[].inputs[].recipient' >> addresses_origin.txt 
+cat response.json | jq -r '.data[].inputs[0].recipient' >> addresses_origin.txt 
 echo "Limpiando data..."
 sleep 1
 > response.json
